@@ -42,6 +42,7 @@ public class ActionDoneParser
     private int getDtObjectActions = 0;
 
     private int searchActions = 0;
+    private int catalogsActions = 0;
 
     boolean nan = true;
 
@@ -150,6 +151,11 @@ public class ActionDoneParser
         return searchActions;
     }
 
+    public int getCatalogsActions()
+    {
+        return catalogsActions;
+    }
+
     public double getStddev()
     {
         return stddev;
@@ -185,6 +191,10 @@ public class ActionDoneParser
             else if (actionInLowerCase.equals("editobjectaction"))
             {
                 editObjectsActions++;
+            }
+            else if (actionInLowerCase.equals("getcatalogsaction"))
+            {
+                catalogsActions++;
             }
             else if (actionInLowerCase.matches("(?i)[a-zA-Z]+comment[a-zA-Z]+"))
             {
